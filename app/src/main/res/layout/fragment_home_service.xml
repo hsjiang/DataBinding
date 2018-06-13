@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.morly.driver.home.service.ServiceViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.morly.driver.widget.AppNavigationBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:left_icon="@mipmap/ic_launcher"
+                app:right_title="+"
+                app:title="@{viewModel.title}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:paddingTop="@dimen/dimen_gap_big">
+
+                <RelativeLayout
+                    android:id="@+id/rl_system_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_gap_big"
+                    android:layout_marginRight="@dimen/dimen_gap_big">
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@{viewModel.time}"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_time"
+                        android:layout_marginTop="@dimen/dimen_gap_micro"
+                        android:text="@{viewModel.date}" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_system_state"
+                    android:layout_marginTop="@dimen/dimen_gap_big"
+                    android:background="@color/bg_white"
+                    android:padding="@dimen/dimen_gap_big">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="在线3小时"
+                        android:textSize="@dimen/dimen_text_medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="共抢单3笔"
+                        android:textSize="@dimen/dimen_text_medium" />
+
+                </RelativeLayout>
+
+                <com.common.library.widgets.fresco.FrescoImageVIew
+                    android:id="@+id/iv_header"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_gap_huge"
+                    app:placeholderImage="@mipmap/ic_launcher"
+                    app:roundAsCircle="true" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_gap_usual"
+                android:background="@color/bg_white"
+                android:padding="@dimen/dimen_gap_small"
+                android:text="系统公告:" />
+
+            <com.common.library.widgets.recyclerView.ScrollChildSwipeRefreshLayout
+                android:id="@+id/sr_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen_gap_small"
+                app:onRefreshListener="@{viewModel.onRefresh}"
+                app:refreshing="@{viewModel.loading}">
+
+                <com.common.library.widgets.recyclerView.BaseRecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:dividerColor="@color/bg_transparent"
+                    app:dividerHeight="@dimen/dimen_gap_small"
+                    app:layoutMode="vertical"
+                    app:rowDivider="true" />
+
+            </com.common.library.widgets.recyclerView.ScrollChildSwipeRefreshLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dimen_gap_small"
+            android:background="@drawable/btn_work"
+            android:gravity="center"
+            android:onClick="@{()->viewModel.onWorkClick()}"
+            android:text="@{viewModel.work}"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/dimen_text_medium" />
+
+    </RelativeLayout>
+
+</layout>

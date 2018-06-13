@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.morly.driver.home.service.ServiceOrderModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="@dimen/dimen_gap_huge"
+            android:layout_marginRight="@dimen/dimen_gap_huge"
+            android:background="@color/bg_white">
+
+            <LinearLayout
+                android:id="@+id/ll_distance"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#FD9727"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_gap_small"
+                android:paddingTop="@dimen/dimen_gap_small">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="距离"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="100.5km"
+                    android:textSize="@dimen/dimen_gap_big" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_gap_small"
+                android:layout_marginTop="@dimen/dimen_gap_small"
+                android:layout_toRightOf="@id/ll_distance"
+                android:text="今天" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dimen_gap_small"
+                android:layout_marginTop="@dimen/dimen_gap_small"
+                android:text="￥150.00" />
+
+            <TextView
+                android:id="@+id/tv_get_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dimen_gap_small"
+                android:layout_marginLeft="@dimen/dimen_gap_small"
+                android:layout_marginRight="@dimen/dimen_gap_small"
+                android:background="#F5F5F5"
+                android:onClick="@{()->viewModel.onItemClick()}"
+                android:padding="@dimen/dimen_gap_small"
+                android:text="立即抢单" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tv_date"
+                android:layout_marginLeft="@dimen/dimen_gap_big"
+                android:layout_marginTop="@dimen/dimen_gap_small"
+                android:layout_toLeftOf="@id/tv_get_order"
+                android:layout_toRightOf="@id/ll_distance"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="工业区国际科技园三期"
+                    android:textSize="@dimen/dimen_text_small" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="东环路地铁口"
+                    android:textSize="@dimen/dimen_text_small" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:background="@color/bg_white"-->
+        <!--android:gravity="center"-->
+        <!--android:onClick="@{()->viewModel.onItemClick()}"-->
+        <!--android:text="@{viewModel.title}" />-->
+    </LinearLayout>
+</layout>

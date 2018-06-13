@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_gray"
+    android:orientation="vertical">
+
+    <com.morly.driver.widget.AppNavigationBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_gap_huge"
+        app:left_title="返回"
+        app:title="司机登录" />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/dimen_gap_huge"
+        android:background="@color/bg_white"
+        android:hint="请输入手机号码"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:paddingLeft="@dimen/dimen_gap_usual"
+        android:textSize="@dimen/dimen_text_usual" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/dimen_gap_huge"
+        android:layout_marginRight="@dimen/dimen_gap_huge"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/bg_white"
+            android:hint="请输入4位数字验证码"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingLeft="@dimen/dimen_gap_usual"
+            android:textSize="@dimen/dimen_text_usual" />
+
+        <TextView
+            android:id="@+id/tv_get_code"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="#00BBF5"
+            android:gravity="center"
+            android:text="获取验证码" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@color/bg_white"
+        android:gravity="center"
+        android:padding="@dimen/dimen_gap_usual"
+        android:text="登录"
+        android:textSize="@dimen/dimen_text_medium" />
+
+    <TextView
+        android:id="@+id/tv_forget_pwd"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:padding="@dimen/dimen_gap_usual"
+        android:text="忘记密码?"
+        android:visibility="gone" />
+
+</LinearLayout>

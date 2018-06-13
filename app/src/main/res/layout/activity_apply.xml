@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.morly.driver.widget.AppNavigationBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:left_title="返回"
+            app:title="申请代驾" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="@dimen/dimen_gap_huge"
+            android:background="@color/bg_white"
+            android:hint="请输入手机号码"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/dimen_gap_usual"
+            android:textSize="@dimen/dimen_text_usual" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dimen_gap_huge"
+            android:layout_marginRight="@dimen/dimen_gap_huge"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/bg_white"
+                android:hint="请输入4位数字验证码"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingLeft="@dimen/dimen_gap_usual"
+                android:textSize="@dimen/dimen_text_usual" />
+
+            <TextView
+                android:id="@+id/tv_get_code"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:background="#00BBF5"
+                android:gravity="center"
+                android:text="获取验证码" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dimen_gap_huge"
+            android:layout_marginRight="@dimen/dimen_gap_huge"
+            android:layout_marginTop="@dimen/dimen_gap_huge"
+            android:background="@color/bg_white"
+            android:hint="真实姓名"
+            android:paddingLeft="@dimen/dimen_gap_usual"
+            android:textSize="@dimen/dimen_text_usual" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dimen_gap_huge"
+            android:layout_marginRight="@dimen/dimen_gap_huge"
+            android:layout_marginTop="@dimen/dimen_gap_huge"
+            android:background="@color/bg_white"
+            android:hint="身份证号码"
+            android:paddingLeft="@dimen/dimen_gap_usual"
+            android:textSize="@dimen/dimen_text_usual" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dimen_gap_huge"
+            android:layout_marginRight="@dimen/dimen_gap_huge"
+            android:layout_marginTop="@dimen/dimen_gap_huge"
+            android:background="@color/bg_white"
+            android:hint="紧急联系人电话"
+            android:paddingLeft="@dimen/dimen_gap_usual"
+            android:textSize="@dimen/dimen_text_usual" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dimen_gap_huge"
+            android:layout_marginRight="@dimen/dimen_gap_huge"
+            android:layout_marginTop="@dimen/dimen_gap_huge"
+            android:background="@color/bg_white"
+            android:hint="介绍码(选填)"
+            android:paddingLeft="@dimen/dimen_gap_usual"
+            android:textSize="@dimen/dimen_text_usual" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dimen_gap_huge"
+            android:background="@drawable/btn_form_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="下一步"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/dimen_gap_big" />
+
+    </LinearLayout>
+</ScrollView>

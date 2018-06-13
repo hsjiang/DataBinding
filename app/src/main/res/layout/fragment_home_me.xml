@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.morly.driver.home.me.MeViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.morly.driver.widget.AppNavigationBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:title="个人中心" />
+
+            <com.common.library.widgets.fresco.FrescoImageVIew
+                android:id="@+id/iv_header"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_gap_huge"
+                app:placeholderImage="@mipmap/ic_launcher"
+                app:roundAsCircle="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_gap_big"
+                android:text="李师傅"
+                android:textSize="@dimen/dimen_text_big" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="@dimen/dimen_gap_medium"
+                android:layout_marginTop="@dimen/dimen_gap_big"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="#CCC"
+                    android:gravity="center"
+                    android:text="钱包"
+                    android:textSize="@dimen/dimen_gap_big" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#CCC"
+                    android:gravity="center"
+                    android:text="订单"
+                    android:textSize="@dimen/dimen_gap_big" />
+
+            </LinearLayout>
+
+            <RelativeLayout style="@style/style_home_me_item">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的发票" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=">" />
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/style_home_me_item">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="邀请好友" />
+
+                <TextView
+                    android:id="@+id/tv_invite_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=">" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_gap_small"
+                    android:layout_toLeftOf="@id/tv_invite_icon"
+                    android:text="最高奖金200元" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout style="@style/style_home_me_item">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保险协议" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=">" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout style="@style/style_home_me_item">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=">" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

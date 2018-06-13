@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MoliDriver</string>
+    <string name="title_service">服务</string>
+    <string name="title_benefit">收益</string>
+    <string name="title_local">附近</string>
+    <string name="title_me">我的</string>
+
+    <string name="text_get_coe">获取验证码</string>
+    <string name="text_work_off">下班</string>
+    <string name="text_work">上班</string>
+</resources>
